@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Rubik+Puddles&display=swap');
+
+:root {
+  --hue: 200;
+  --saturation: 50%;
+  --bar-color: hsl(var(--hue), var(--saturation), 75%);
+  --background-color: hsl(var(--hue), var(--saturation), 20%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Oxygen', sans-serif;
+  font-family: 'Rubik Puddles', cursive;
+}
+
+body {
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  color: var(--bar-color);
+  font-weight: bold;
+  font-size: 7vh;
+  opacity: 0.5;
+}
+
+.player, .computer {
+  text-align: center;
+  padding: 0.5%;
+  width: 100%;
+}
+
+.player {
+  border-right: 1vh solid var(--bar-color);
+}
+
+.player-label, .computer-label {
+  font-weight: normal;
+  font-size: 5vh;
+}
+
+.bar {
+  --position: 50;
+
+  position: absolute;
+  background-color: var(--bar-color);
+  width: 1.5vh;
+  height: 10vh;
+  top: calc(var(--position) * 1vh);
+  transform: translateY(-50%);
+}
+
+.bar.left {
+  left: 1%;
+}
+
+.bar.right {
+  right: 1%;
+}
+
+.ball {
+  --x: 50;
+  --y: 50;
+  
+  position: absolute;
+  background-color: var(--bar-color);
+  width: 2.5vh;
+  height: 2.5vh;
+  left: calc(var(--x) * 1vw);
+  top: calc(var(--y) * 1vh);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
